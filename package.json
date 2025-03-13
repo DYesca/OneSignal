@@ -12,6 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@capacitor/android": "7.1.0",
     "@capacitor/app": "7.0.0",
     "@capacitor/core": "7.1.0",
     "@capacitor/haptics": "7.0.0",
@@ -20,6 +21,7 @@
     "@ionic/vue": "^8.0.0",
     "@ionic/vue-router": "^8.0.0",
     "ionicons": "^7.0.0",
+    "onesignal-cordova-plugin": "^5.2.11",
     "vue": "^3.3.0",
     "vue-router": "^4.2.0"
   },
