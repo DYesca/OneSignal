@@ -1,0 +1,7 @@
+{
+  "name": "OneSignal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
