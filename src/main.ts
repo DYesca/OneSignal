@@ -46,7 +46,9 @@ const app = createApp(App)
 router.isReady().then(() => {
   app.mount('#app');
 
-  OneSignal.initialize("dfb830b3-cb27-448a-88df-08c765aaef8b");
+  OneSignal.initialize("3013a0b2-5f63-4cf6-aaf6-33391baaa537");
+  /* mi otra one signal ID 
+  dfb830b3-cb27-448a-88df-08c765aaef8b*/
   OneSignal.Notifications.requestPermission();
 
   // Obtener el ID del usuario cada 60s hasta que esté disponible
@@ -76,22 +78,22 @@ router.isReady().then(() => {
     await alert.present();
   };
 
-OneSignal.Notifications.addEventListener("foregroundWillDisplay", displayNotification);
+  OneSignal.Notifications.addEventListener("foregroundWillDisplay", displayNotification);
 
-// Esto maneja el evento de clic en la notificación
-const openNotification = async (event: NotificationClickEvent) => {
-  const notification = event.notification;
-  console.log("Notificación clickeada:", notification);
+  // Esto maneja el evento de clic en la notificación
+  const openNotification = async (event: NotificationClickEvent) => {
+    const notification = event.notification;
+    console.log("Notificación clickeada:", notification);
 
-  // Crear alerta con Ionic para cuando el usuario haga clic en la notificación
-  const alert = await alertController.create({
-    header: "Notificación Abierta",
-    message: `${notification.body}`, 
-    buttons: ["OK"],
+    // Crear alerta con Ionic para cuando el usuario haga clic en la notificación
+    const alert = await alertController.create({
+      header: "Notificación Abierta",
+      message: `${notification.body}`,
+      buttons: ["OK"],
     });
 
-await alert.present();
+    await alert.present();
   };
 
-OneSignal.Notifications.addEventListener("click", openNotification);
+  OneSignal.Notifications.addEventListener("click", openNotification);
 });
